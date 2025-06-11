@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us - VerdiNest Garden Designs</title>
+<!-- Google Material Icons CDN -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #f0f7f1;
+    color: #374151;
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    text-decoration: none;
+    color: #276749; /* Forest green */
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #2c7a7b; /* Teal */
+    outline: none;
+  }
+  h1,h2,h3,h4 {
+    font-weight: 700;
+    color: #1a202c;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+  p {
+    margin-bottom: 1.2rem;
+    color: #4a5568;
+  }
+  ul {
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+    color: #4a5568;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  input, textarea, select, button {
+    font-family: inherit;
+  }
+  /* Container */
+  .container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  /* Header */
+  header {
+    background: #2f855a; /* dark green */
+    color: #e6fffa;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    color: #d9f99d; /* soft lime */
+    cursor: default;
+    user-select: none;
+  }
+  nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  nav a {
+    color: #c6f6d5;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(214, 255, 211, 0.3);
+    color: #22543d; /* darker green */
+  }
+  .mobile-menu-button {
+    background: none;
+    border: none;
+    color: #d9f99d;
+    cursor: pointer;
+    display: none;
+    font-size: 32px;
+  }
+  /* Responsive navigation */
+  @media (max-width: 767px) {
+    nav {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      background: #276749;
+      padding: 16px 24px;
+      position: fixed;
+      top: 64px;
+      right: 0;
+      width: 240px;
+      height: calc(100% - 64px);
+      box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+      border-radius: 0 0 0 12px;
+      z-index: 1200;
+    }
+    nav.show {
+      display: flex;
+    }
+    .mobile-menu-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border-radius: 8px;
+      user-select: none;
+    }
+  }
+  @media (min-width: 768px) {
+    nav {
+      display: flex !important;
+    }
+  }
+  /* Page Title Section */
+  .page-hero {
+    background: linear-gradient(145deg, #1e3a23 5%, #53a548 90%);
+    color: #f0fff7;
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .page-hero h1 {
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Content */
+  main {
+    padding-bottom: 64px;
+  }
+  /* Footer */
+  footer {
+    background: #22543d;
+    color: #d9f99d;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  footer address {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #c6f6d5;
+  }
+  /* Sections */
+  section {
+    margin-bottom: 56px;
+  }
+  /* Form Styles */
+  form {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #daf2d1;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(43,89,31,0.15);
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #22543d;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #a3e635;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #22543d;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  button[type="submit"] {
+    background: linear-gradient(135deg, #a3e635 0%, #4ade80 100%);
+    border: none;
+    color: #1a202c;
+    font-weight: 700;
+    padding: 18px 44px;
+    font-size: 1.25rem;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(75,180,60,0.4);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  button[type="submit"]:hover,
+  button[type="submit"]:focus {
+    box-shadow: 0 15px 35px rgba(110,210,80,0.6);
+    transform: translateY(-3px);
+    outline: none;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="logo" aria-label="VerdiNest Garden Designs Logo">VerdiNest</div>
+    <nav aria-label="Primary Navigation" id="primary-navigation">
+      <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+    </nav>
+    <button class="mobile-menu-button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="material-icons" style="font-size:36px;">menu</span>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero" role="banner">
+  <h1>Contact Us</h1>
+  <p>We welcome your questions, comments, and inquiries. Reach out to us anytime!</p>
+</section>
+
+<main class="container" tabindex="-1">
+
+<section aria-labelledby="contact-form-title">
+  <h2 id="contact-form-title">Get in Touch</h2>
+  <form aria-label="Contact form" action="#" method="POST">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required placeholder="Your full name" />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required placeholder="you@example.com" />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="+1 (###) ###-####" />
+
+    <label for="service">Service Interest</label>
+    <select id="service" name="service" required>
+      <option value="">Please select</option>
+      <option value="Tree Cutting">Tree Cutting & Removal</option>
+      <option value="Garden Landscaping">Garden Landscaping</option>
+      <option value="Forestry Management">Forestry Management</option>
+      <option value="Tree Health">Tree Health Assessment</option>
+      <option value="Garden Maintenance">Garden Maintenance</option>
+      <option value="Tree Planting">Tree Planting</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" required placeholder="Tell us about your project or inquiry..."></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<section aria-labelledby="contact-info-title">
+  <h2 id="contact-info-title">Contact Information</h2>
+  <p>We’re always happy to hear from you. Here are the ways to reach us:</p>
+  <ul>
+    <li><strong>Address:</strong> 242 Greene St, New York, NY 10003, USA</li>
+    <li><strong>Phone:</strong> +1 (212) 555-1234</li>
+    <li><strong>Email:</strong> <a href="mailto:info@verdinnest.com">info@verdinnest.com</a></li>
+  </ul>
+</section>
+
+<section aria-labelledby="office-hours-title">
+  <h2 id="office-hours-title">Office Hours</h2>
+  <p>Our office is open to assist you during the following hours:</p>
+  <ul>
+    <li>Monday to Friday: 9:00 AM - 6:00 PM</li>
+    <li>Saturday: 10:00 AM - 4:00 PM</li>
+    <li>Sunday: Closed</li>
+  </ul>
+  <p>Outside office hours, please leave a message via our contact form or email, and we will respond as soon as possible.</p>
+</section>
+
+<section aria-labelledby="faq-title">
+  <h2 id="faq-title">Frequently Asked Questions</h2>
+  <h3>How can I request a quote for services?</h3>
+  <p>Use our contact form specifying your required services and project details. Our team will review your request and respond promptly with a custom quote.</p>
+
+  <h3>Do you offer consultations?</h3>
+  <p>Yes, we provide personalized consultations to discuss your garden design or forestry management needs. Contact us to schedule an appointment.</p>
+  
+  <h3>What is your typical project timeline?</h3>
+  <p>Timelines vary by project complexity, size, and weather conditions. We will provide an estimated timeline during the initial consultation.</p>
+  
+  <h3>Do you provide maintenance services?</h3>
+  <p>Yes, we offer ongoing garden and tree maintenance packages to keep your landscape thriving throughout the year.</p>
+</section>
+
+<section aria-labelledby="service-area-title">
+  <h2 id="service-area-title">Where We Serve</h2>
+  <p>VerdiNest Garden Designs proudly serves clients throughout New York City and the surrounding metro areas. Our services are tailored for urban, suburban, and rural properties, with custom solutions for different environments.</p>
+  <p>For projects outside these areas, please contact us to discuss availability and options.</p>
+</section>
+
+<section aria-labelledby="project-process-title">
+  <h2 id="project-process-title">Our Project Process</h2>
+  <p>We believe in transparent, collaborative project management from start to finish:</p>
+  <ol>
+    <li><strong>Initial Contact:</strong> You reach out with project details.</li>
+    <li><strong>Consultation:</strong> We assess your site and discuss goals.</li>
+    <li><strong>Proposal & Quote:</strong> Custom plan and pricing are presented.</li>
+    <li><strong>Agreement:</strong> Contractual terms and scheduling are finalized.</li>
+    <li><strong>Execution:</strong> Our team performs the work with professionalism.</li>
+    <li><strong>Follow-up:</strong> We ensure satisfaction and discuss ongoing care.</li>
+  </ol>
+</section>
+
+<section aria-labelledby="payment-methods-title">
+  <h2 id="payment-methods-title">Payment Methods and Policies</h2>
+  <p>We accept various payment methods including credit cards, bank transfers, and checks. Payment terms will be outlined in your service agreement.</p>
+  <p>Deposits may be required before work commences, with balance due upon completion or as agreed.</p>
+</section>
+
+<section aria-labelledby="sustainability-commitment-title">
+  <h2 id="sustainability-commitment-title">Sustainability Commitment</h2>
+  <p>At VerdiNest, we prioritize environmentally responsible practices in all aspects of our work. We minimize waste, use eco-friendly materials, and promote biodiversity through our designs and maintenance routines.</p>
+</section>
+
+<section aria-labelledby="career-opportunities-title">
+  <h2 id="career-opportunities-title">Career Opportunities</h2>
+  <p>Interested in joining the VerdiNest team? We are always looking for passionate individuals skilled in horticulture, landscaping, forestry, and customer service. Please contact us to inquire about openings or submit your resume.</p>
+</section>
+
+<section aria-labelledby="partnerships-title">
+  <h2 id="partnerships-title">Partnerships and Collaborations</h2>
+  <p>We collaborate with industry professionals, local nurseries, and environmental organizations to provide the best service and promote sustainable gardening and forestry practices.</p>
+  <p>If you are interested in partnering with VerdiNest, please reach out via our contact details.</p>
+</section>
+
+<section aria-labelledby="newsletter-signup-title">
+  <h2 id="newsletter-signup-title">Newsletter Signup</h2>
+  <p>Stay updated on the latest garden design trends, tips, and VerdiNest news by subscribing to our newsletter. Visit our homepage to sign up and receive exclusive offers.</p>
+</section>
+
+<section aria-labelledby="community-involvement-title">
+  <h2 id="community-involvement-title">Community Involvement</h2>
+  <p>VerdiNest actively participates in community projects aimed at urban greening and environmental education. We encourage clients to join local initiatives or reach out for volunteer opportunities with us.</p>
+</section>
+
+<section aria-labelledby="customer-testimonials-title">
+  <h2 id="customer-testimonials-title">Customer Testimonials</h2>
+  <p>Our customers’ satisfaction is our greatest reward. Visit our homepage for testimonials from clients who have transformed their outdoor spaces with VerdiNest.</p>
+</section>
+
+<section aria-labelledby="service-guarantees-title">
+  <h2 id="service-guarantees-title">Service Guarantees</h2>
+  <p>We stand behind our work with satisfaction guarantees and warranties on specific services. Contact us to learn about guarantees applicable to your project.</p>
+</section>
+
+<section aria-labelledby="safety-standards-title">
+  <h2 id="safety-standards-title">Safety Standards</h2>
+  <p>All activities performed by VerdiNest comply with strict safety regulations. Our team is trained to manage hazardous situations such as tree removal or equipment operation responsibly.</p>
+</section>
+
+<section aria-labelledby="environmental-policies-title">
+  <h2 id="environmental-policies-title">Environmental Policies</h2>
+  <p>Our environmental policies ensure that work is performed in an ecologically sensitive manner, protecting wildlife, soil quality, and water resources.</p>
+</section>
+
+<section aria-labelledby="seasonal-care-title">
+  <h2 id="seasonal-care-title">Seasonal Care & Recommendations</h2>
+  <p>We provide guidance and services tailored to seasonal needs, such as winter protection and spring planting, ensuring vibrant landscapes year round.</p>
+</section>
+
+<section aria-labelledby="emergency-services-title">
+  <h2 id="emergency-services-title">Emergency Services</h2>
+  <p>In case of storm damage or urgent tree hazards, VerdiNest offers emergency response services to mitigate risks promptly and safely.</p>
+</section>
+
+<section aria-labelledby="site-assessment-title">
+  <h2 id="site-assessment-title">Site Assessment and Quotes</h2>
+  <p>Prior to beginning any work, we conduct thorough site assessments to identify challenges, opportunities, and provide accurate estimates.</p>
+</section>
+
+<section aria-labelledby="client-obligations-title">
+  <h2 id="client-obligations-title">Client Obligations</h2>
+  <p>Clients agree to provide necessary access, accurate information, and to cooperate to ensure timely and efficient project completion.</p>
+</section>
+
+<section aria-labelledby="force-majeure-title">
+  <h2 id="force-majeure-title">Force Majeure</h2>
+  <p>Neither party shall be liable for failure or delay due to events beyond reasonable control, including natural disasters, labor unrest, or government intervention.</p>
+</section>
+
+<section aria-labelledby="limitation-title">
+  <h2 id="limitation-title">Limitation of Liability</h2>
+  <p>VerdiNest’s liability is limited to direct damages and excludes incidental, consequential, or punitive damages except as required by law.</p>
+</section>
+
+<section aria-labelledby="terminations-title">
+  <h2 id="terminations-title">Termination of Services</h2>
+  <p>We reserve the right to terminate services if terms are violated, or for non-payment, with appropriate notification.</p>
+</section>
+
+<section aria-labelledby="governing-law-title">
+  <h2 id="governing-law-title">Governing Law and Dispute Resolution</h2>
+  <p>These Terms are governed by New York law. Disputes will first try resolution via negotiation or mediation before litigation.</p>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <address>
+      VerdiNest Garden Designs<br />
+      242 Greene St, New York, NY 10003, USA<br />
+      <a href="tel:+12125551234" style="color:#d9f99d;">+1 (212) 555-1234</a> | 
+      <a href="mailto:info@verdinnest.com" style="color:#d9f99d;">info@verdinnest.com</a>
+    </address>
+    <p style="margin-top: 20px; font-size: 0.9rem; color:#b9f6ca;">&copy; 2024 VerdiNest Garden Designs. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile Menu Toggle
+  const menuButton = document.querySelector('.mobile-menu-button');
+  const nav = document.getElementById('primary-navigation');
+
+  menuButton.addEventListener('click', () => {
+    const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+    menuButton.setAttribute('aria-expanded', !expanded);
+    nav.classList.toggle('show');
+  });
+
+  nav.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('show')) {
+      nav.classList.remove('show');
+      menuButton.setAttribute('aria-expanded', false);
+      menuButton.focus();
+    }
+  });
+</script>
+</body>
+</html>
