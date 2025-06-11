@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VerdiNest Garden Designs - Forestry & Tree Cutting Services</title>
+<!-- Google Material Icons CDN -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+<style>
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #f0f7f1;
+    color: #374151;
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    text-decoration: none;
+    color: #276749; /* Forest green */
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #2c7a7b; /* Teal */
+    outline: none;
+  }
+  h1,h2,h3,h4 {
+    font-weight: 700;
+    color: #1a202c;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+  p {
+    margin-bottom: 1.2rem;
+    color: #4a5568;
+  }
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  /* Header */
+  header {
+    background: #2f855a; /* dark green */
+    color: #e6fffa;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    color: #d9f99d; /* soft lime */
+    cursor: default;
+    user-select: none;
+  }
+  nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  nav a {
+    color: #c6f6d5;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(214, 255, 211, 0.3);
+    color: #22543d; /* darker green */
+  }
+  /* Mobile Menu */
+  .mobile-menu-button {
+    background: none;
+    border: none;
+    color: #d9f99d;
+    cursor: pointer;
+    display: none;
+    font-size: 32px;
+  }
+  /* Hero */
+  .hero {
+    position: relative;
+    background: linear-gradient(145deg, #1e3a23 5%, #53a548 90%);
+    color: #f0fff7;
+    padding: 96px 24px 80px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero p {
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin: 24px auto 40px;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  }
+  .hero .btn-primary {
+    background: linear-gradient(135deg, #a3e635 0%, #4ade80 100%);
+    border: none;
+    font-weight: 700;
+    padding: 18px 44px;
+    font-size: 1.25rem;
+    border-radius: 40px;
+    color: #1a202c;
+    box-shadow: 0 10px 25px rgba(75, 180, 60, 0.4);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .hero .btn-primary:hover,
+  .hero .btn-primary:focus {
+    box-shadow: 0 15px 35px rgba(110, 210, 80, 0.6);
+    transform: translateY(-3px);
+    outline: none;
+  }
+
+  /* Section styles */
+  section {
+    padding: 64px 24px;
+  }
+  section h2 {
+    text-align: center;
+    margin-bottom: 48px;
+    color: #22543d;
+  }
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+  }
+  .service-card {
+    background: #daf2d1;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(43, 89, 31, 0.15);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+  }
+  .service-card:hover,
+  .service-card:focus-within {
+    box-shadow: 0 12px 28px rgba(43, 89, 31, 0.35);
+    outline: none;
+  }
+  .service-image {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 16px;
+  }
+  .service-icon {
+    font-size: 48px;
+    color: #4ade80;
+    margin-bottom: 16px;
+    align-self: center;
+  }
+  .service-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #22543d;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .service-desc {
+    flex-grow: 1;
+    color: #276749;
+    line-height: 1.5;
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+  .service-price {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #22543d;
+    text-align: center;
+  }
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+  }
+  .gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(19, 70, 22, 0.2);
+    cursor: zoom-in;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .gallery-item:hover img,
+  .gallery-item:focus-within img {
+    transform: scale(1.05);
+  }
+  /* Generic content wide text */
+  .content-block {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #2f4b26;
+  }
+  /* Disclaimer */
+  .disclaimer {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #4a5568;
+    font-style: italic;
+    font-size: 0.95rem;
+    background: #f9faf9;
+    border-left: 6px solid #a3e635;
+    padding: 18px 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(141, 167, 78, 0.2);
+  }
+  /* Customer Satisfaction */
+  .customer-satisfaction {
+    background: #d3f9d8;
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: 0 8px 16px rgba(67,165,56,0.25);
+    text-align: center;
+    max-width: 800px;
+    margin: 48px auto;
+  }
+  .customer-satisfaction h3 {
+    color: #2f855a;
+  }
+  .customer-satisfaction p {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #276749;
+  }
+  /* Footer */
+  footer {
+    background: #22543d;
+    color: #d9f99d;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  footer address {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #c6f6d5;
+  }
+  /* Responsive navigation */
+  @media (max-width: 767px) {
+    nav {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      background: #276749;
+      padding: 16px 24px;
+      position: fixed;
+      top: 64px;
+      right: 0;
+      width: 240px;
+      height: calc(100% - 64px);
+      box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+      border-radius: 0 0 0 12px;
+      z-index: 1200;
+    }
+    nav.show {
+      display: flex;
+    }
+    .mobile-menu-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border-radius: 8px;
+      user-select: none;
+    }
+  }
+  @media (min-width: 768px) {
+    nav {
+      display: flex !important;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="logo" aria-label="VerdiNest Garden Designs Logo">VerdiNest</div>
+    <nav aria-label="Primary Navigation" id="primary-navigation">
+      <a href="#services" tabindex="0">Services</a>
+      <a href="#gallery" tabindex="0">Gallery</a>
+      <a href="#about" tabindex="0">About Us</a>
+      <a href="#sustainable-gardening" tabindex="0">Sustainable Gardening</a>
+      <a href="#tree-care-tips" tabindex="0">Seasonal Tree Care</a>
+      <a href="#native-plants" tabindex="0">Native Plants</a>
+      <a href="#pest-management" tabindex="0">Pest & Disease</a>
+      <a href="#landscape-lighting" tabindex="0">Landscape Lighting</a>
+      <a href="#water-management" tabindex="0">Water Management</a>
+      <a href="#lawn-care" tabindex="0">Eco-Friendly Lawn Care</a>
+      <a href="#urban-forestry" tabindex="0">Urban Forestry</a>
+      <a href="#disclaimer" tabindex="0">Disclaimer</a>
+    </nav>
+    <button class="mobile-menu-button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="material-icons" style="font-size:36px;">menu</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" role="banner">
+  <h1>VerdiNest Garden Designs</h1>
+  <p>Your trusted partner for expert garden & forestry design, specializing in tree cutting and sustainable landscaping.</p>
+  <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Explore Our Services</button>
+  <!-- Tree silhouette removed as requested -->
+</section>
+
+<section id="services" class="container" tabindex="-1" aria-labelledby="services-title">
+  <h2 id="services-title">Our Premium Services & Pricing</h2>
+  <div class="services-grid" role="list">
+    <article class="service-card" role="listitem" tabindex="0" aria-label="Tree Cutting Service">
+      <img class="service-image" src="s1.jpg" alt="Professional tree cutting service in action" />
+      <span class="material-icons service-icon" aria-hidden="true">forest</span>
+      <h3 class="service-title">Tree Cutting & Removal</h3>
+      <p class="service-desc">Professional tree cutting, pruning, and removal services using eco-friendly methods ensuring safety and respect for your landscape.</p>
+      <p class="service-price">$150 - $600 per tree (Depending on size and complexity)</p>
+    </article>
+    <article class="service-card" role="listitem" tabindex="0" aria-label="Garden Landscaping">
+      <img class="service-image" src="s2.jpg" alt="Vibrant garden landscaping with colorful plants and pathways" />
+      <span class="material-icons service-icon" aria-hidden="true">grass</span>
+      <h3 class="service-title">Garden Landscaping</h3>
+      <p class="service-desc">Creative garden design, installation, and maintenance to bring life to your outdoor spaces with vibrant greenery and natural harmony.</p>
+      <p class="service-price">Starting from $1,200 per project</p>
+    </article>
+    <article class="service-card" role="listitem" tabindex="0" aria-label="Forestry Management">
+      <img class="service-image" src="s3.jpg" alt="Managed forest area with healthy trees and clear paths" />
+      <span class="material-icons service-icon" aria-hidden="true">park</span>
+      <h3 class="service-title">Forestry Management</h3>
+      <p class="service-desc">Sustainable forestry services including monitoring, planting, and preservation tailored for urban and rural green spaces.</p>
+      <p class="service-price">Custom pricing based on acreage and service scope</p>
+    </article>
+    <article class="service-card" role="listitem" tabindex="0" aria-label="Tree Health Assessment">
+      <img class="service-image" src="s4.jpg" alt="Expert assessing health of a mature tree" />
+      <span class="material-icons service-icon" aria-hidden="true">local_florist</span>
+      <h3 class="service-title">Tree Health Assessment</h3>
+      <p class="service-desc">Expert evaluation of tree health to recommend treatments for diseases, pests, and overall vitality improvement.</p>
+      <p class="service-price">$100 per assessment</p>
+    </article>
+    <article class="service-card" role="listitem" tabindex="0" aria-label="Garden Maintenance">
+      <img class="service-image" src="s5.jpg" alt="Gardener trimming plants and maintaining flowers" />
+      <span class="material-icons service-icon" aria-hidden="true">eco</span>
+      <h3 class="service-title">Garden Maintenance</h3>
+      <p class="service-desc">Regular garden care including pruning, watering, fertilization, and pest control for a flourishing and healthy garden.</p>
+      <p class="service-price">From $150 per month</p>
+    </article>
+    <article class="service-card" role="listitem" tabindex="0" aria-label="Tree Planting">
+      <img class="service-image" src="s6.jpg" alt="Young saplings being planted in a garden" />
+      <span class="material-icons service-icon" aria-hidden="true">nature</span>
+      <h3 class="service-title">Tree Planting</h3>
+      <p class="service-desc">Professional selection and planting of trees native to your area to optimize growth and landscape beauty.</p>
+      <p class="service-price">Starting at $100 per tree</p>
+    </article>
+  </div>
+</section>
+
+<!-- Rest of the content remains unchanged -->
+
+<section id="gallery" class="container" tabindex="-1" aria-labelledby="gallery-title">
+  <h2 id="gallery-title">Gallery of Our Work</h2>
+  <div class="gallery-grid" role="list">
+    <div class="gallery-item" tabindex="0" role="listitem">
+      <img src="g1.jpg" alt="Lush garden design with various plants and small trees arranged beautifully with natural pathways" />
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem">
+      <img src="g2.jpg" alt="Professional tree cutting in action with workers trimming big branches safely" />
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem">
+      <img src="g3.jpg" alt="Managed forest area with clean walking paths surrounded by tall trees and healthy foliage" />
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem">
+      <img src="g4.jpg" alt="Gardener pruning bushes and maintaining flower beds in a vibrant garden" />
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem">
+      <img src="g5.jpg" alt="Tree planting event with young saplings and volunteers participating outdoors" />
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem">
+      <img src="g6.jpg" alt="Sustainable garden landscaping with eco-friendly features like rainwater collection and native plants" />
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem">
+      <img src="g7.jpg" alt="Well-pruned garden trees showing skillful cutting and shaping with clear blue sky background" />
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem">
+      <img src="g8.jpg" alt="Forestry consultation taking place outdoors with a professional showing forest maps to clients" />
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem">
+      <img src="g9.jpg" alt="Specialized tree care equipment and tools laid out on the grass during a maintenance day" />
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem">
+      <img src="g10.jpg" alt="Hand-drawn garden design concepts on a large sheet with color sketches and notes" />
+    </div>
+  </div>
+</section>
+
+<section id="about" class="container" tabindex="-1" aria-labelledby="about-title">
+  <h2 id="about-title">About VerdiNest Garden Designs</h2>
+  <div class="content-block">
+    <p>
+      Established over a decade ago, VerdiNest specializes in comprehensive garden and forestry design services centered around sustainable practices and natural beauty. Our expert team combines professional craftsmanship with ecological sensitivity to craft outdoor spaces that thrive with life and charm.
+    </p>
+    <p>
+      Our passion is rooted in enhancing your green spaces while preserving and respecting the environment. From detailed tree cutting and pruning to full-scale landscaping and forestry management, VerdiNest offers bespoke solutions tailored to meet your unique horticultural vision.
+    </p>
+    <p>
+      We use innovative techniques and the latest equipment, focusing on safety and environmental care to deliver the highest quality results. Our commitment to quality, customer experience, and environmental stewardship has built our reputation as a trusted leader in garden and forestry design across New York and beyond.
+    </p>
+    <p>
+      Our team is continuously expanding the knowledge base and incorporates advances in sustainable gardening, native planting, and modern landscape architecture to ensure your garden's health and beauty for generations to come.
+    </p>
+  </div>
+</section>
+
+<!-- Additional topics sections from the previous content go here unchanged -->
+
+<section id="sustainable-gardening" class="container" tabindex="-1" aria-labelledby="sustainable-gardening-title">
+  <h2 id="sustainable-gardening-title">Sustainable Gardening Practices</h2>
+  <div class="content-block">
+    <p>
+      Sustainable gardening emphasizes eco-friendly practices that conserve resources and enhance biodiversity. We incorporate soil health, water conservation techniques, and organic fertilizers to nurture gardens that harmonize with nature.
+    </p>
+    <p>
+      Our experts design rain gardens and select drought-resistant plants to reduce water use, while promoting habitats for beneficial insects and pollinators. Composting and mulching are standard practices to enrich the soil naturally.
+    </p> 
+  </div>
+</section>
+
+<section id="tree-care-tips" class="container" tabindex="-1" aria-labelledby="tree-care-tips-title">
+  <h2 id="tree-care-tips-title">Seasonal Tree Care Tips</h2>
+  <div class="content-block">
+    <p>
+      Trees require different care routines throughout the seasons. Spring is ideal for pruning damaged branches, early summer for fertilization, autumn for watering before dormancy, and winter for inspecting trunks and planning for spring growth.
+    </p>
+    <p>
+      We provide timed advice and maintenance services ensuring your trees remain healthy and safe year-round, helping to prevent disease and storm damage.
+    </p>
+  </div>
+</section>
+
+<section id="native-plants" class="container" tabindex="-1" aria-labelledby="native-plants-title">
+  <h2 id="native-plants-title">Benefits of Native Plants</h2>
+  <div class="content-block">
+    <p>
+      Native plants are adapted to local conditions, requiring less water and fertilizer. They support local wildlife including birds and pollinators, maintaining ecological balance.
+    </p>
+    <p>
+      We specialize in integrating native species into your garden, creating resilient, beautiful landscapes that thrive naturally and reduce maintenance efforts.
+    </p>
+  </div>
+</section>
+
+<section id="pest-management" class="container" tabindex="-1" aria-labelledby="pest-management-title">
+  <h2 id="pest-management-title">Pest and Disease Management</h2>
+  <div class="content-block">
+    <p>
+      Healthy gardens resist pests better. We use integrated pest management combining biological controls, cultural practices, and targeted treatments to protect your plants while minimizing chemicals.
+    </p>
+    <p>
+      Regular monitoring and early intervention keep diseases under control, preserving the vitality of your garden ecosystems.
+    </p>
+  </div>
+</section>
+
+<section id="landscape-lighting" class="container" tabindex="-1" aria-labelledby="landscape-lighting-title">
+  <h2 id="landscape-lighting-title">Landscape Lighting Design</h2>
+  <div class="content-block">
+    <p>
+      Well-designed landscape lighting extends usability of your outdoor spaces into the evening while enhancing beauty. We use energy-efficient LED fixtures placed strategically to highlight focal points like trees, paths, and water features.
+    </p>
+    <p>
+      Safety and ambiance are balanced with smart controls and subtle effects that enrich your garden’s allure.
+    </p>
+  </div>
+</section>
+
+<section id="water-management" class="container" tabindex="-1" aria-labelledby="water-management-title">
+  <h2 id="water-management-title">Garden Water Management</h2>
+  <div class="content-block">
+    <p>
+      Efficient water management conserves resources and prevents plant stress. Our designs include drip irrigation, rainwater harvesting systems, and smart watering schedules tailored to your garden’s needs.
+    </p>
+    <p>
+      We evaluate soil moisture and plant demand to optimize water use, ensuring lush yet sustainable landscapes.
+    </p>
+  </div>
+</section>
+
+<section id="lawn-care" class="container" tabindex="-1" aria-labelledby="lawn-care-title">
+  <h2 id="lawn-care-title">Eco-Friendly Lawn Care</h2>
+  <div class="content-block">
+    <p>
+      Our lawn care services emphasize natural fertilization, aeration, and minimal pesticide use. We promote healthy soil biology and grass varieties suited to your region for durable, green lawns.
+    </p>
+    <p>
+      Seasonal treatments prevent weeds and pests without harming beneficial insects or the environment.
+    </p>
+  </div>
+</section>
+
+<section id="urban-forestry" class="container" tabindex="-1" aria-labelledby="urban-forestry-title">
+  <h2 id="urban-forestry-title">Urban Forestry Solutions</h2>
+  <div class="content-block">
+    <p>
+      Urban forestry balances city development and green infrastructure. We help cities and communities plan tree planting, maintenance, and preservation to improve air quality, aesthetics, and shade.
+    </p>
+    <p>
+      Our consulting includes risk assessment and selection of species resilient to urban pollution and climate challenges.
+    </p>
+  </div>
+</section>
+
+<section id="disclaimer" class="container" tabindex="-1" aria-labelledby="disclaimer-title">
+  <h2 id="disclaimer-title">Disclaimer</h2>
+  <p class="disclaimer">
+    The information provided by VerdiNest Garden Designs is for general informational purposes only. All services are dependent on site-specific conditions and professional assessment. We disclaim any liability for damages or losses resulting from the implementation of the services described on this website or any information provided herein. Prior consultation and site evaluations are recommended before proceeding with service engagements. For detailed advice and guarantees, please contact our representatives directly.
+  </p>
+</section>
+
+<section class="customer-satisfaction" tabindex="0" aria-label="Customer Satisfaction Statement">
+  <h3>Our Commitment to Your Satisfaction</h3>
+  <p>At VerdiNest, customer satisfaction is at the heart of everything we do. Our dedicated team ensures quality, timely delivery, and attentive communication to provide you with the best garden and forestry design experience. We value your trust and strive to exceed expectations in every project.</p>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <address>
+      VerdiNest Garden Designs<br />
+      242 Greene St, New York, NY 10003, USA<br />
+      <a href="tel:+12125551234" style="color:#d9f99d;">+1 (212) 555-1234</a> | 
+      <a href="mailto:info@verdinnest.com" style="color:#d9f99d;">info@verdinnest.com</a>
+    </address>
+    <p style="margin-top: 20px; font-size: 0.9rem; color:#b9f6ca;">&copy; 2024 VerdiNest Garden Designs. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile Menu Toggle
+  const menuButton = document.querySelector('.mobile-menu-button');
+  const nav = document.getElementById('primary-navigation');
+
+  menuButton.addEventListener('click', () => {
+    const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+    menuButton.setAttribute('aria-expanded', !expanded);
+    nav.classList.toggle('show');
+  });
+
+  // Close menu when focus moves away on small screens
+  nav.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('show')) {
+      nav.classList.remove('show');
+      menuButton.setAttribute('aria-expanded', false);
+      menuButton.focus();
+    }
+  });
+</script>
+</body>
+</html>
+
