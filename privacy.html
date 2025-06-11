@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy - VerdiNest Garden Designs</title>
+<!-- Google Material Icons CDN -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+<style>
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #f0f7f1;
+    color: #374151;
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    text-decoration: none;
+    color: #276749; /* Forest green */
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #2c7a7b; /* Teal */
+    outline: none;
+  }
+  h1,h2,h3,h4 {
+    font-weight: 700;
+    color: #1a202c;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+  p {
+    margin-bottom: 1.2rem;
+    color: #4a5568;
+  }
+  ul {
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+    color: #4a5568;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  /* Container */
+  .container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  /* Header */
+  header {
+    background: #2f855a; /* dark green */
+    color: #e6fffa;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    color: #d9f99d; /* soft lime */
+    cursor: default;
+    user-select: none;
+  }
+  nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  nav a {
+    color: #c6f6d5;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(214, 255, 211, 0.3);
+    color: #22543d; /* darker green */
+  }
+  .mobile-menu-button {
+    background: none;
+    border: none;
+    color: #d9f99d;
+    cursor: pointer;
+    display: none;
+    font-size: 32px;
+  }
+  /* Responsive navigation */
+  @media (max-width: 767px) {
+    nav {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      background: #276749;
+      padding: 16px 24px;
+      position: fixed;
+      top: 64px;
+      right: 0;
+      width: 240px;
+      height: calc(100% - 64px);
+      box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+      border-radius: 0 0 0 12px;
+      z-index: 1200;
+    }
+    nav.show {
+      display: flex;
+    }
+    .mobile-menu-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border-radius: 8px;
+      user-select: none;
+    }
+  }
+  @media (min-width: 768px) {
+    nav {
+      display: flex !important;
+    }
+  }
+  /* Page Title Section */
+  .page-hero {
+    background: linear-gradient(145deg, #1e3a23 5%, #53a548 90%);
+    color: #f0fff7;
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .page-hero h1 {
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Content */
+  main {
+    padding-bottom: 64px;
+  }
+  /* Footer */
+  footer {
+    background: #22543d;
+    color: #d9f99d;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  footer address {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #c6f6d5;
+  }
+  /* Sections */
+  section {
+    margin-bottom: 56px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="logo" aria-label="VerdiNest Garden Designs Logo">VerdiNest</div>
+    <nav aria-label="Primary Navigation" id="primary-navigation">
+     <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0"aria-current="page">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+    </nav>
+    <button class="mobile-menu-button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="material-icons" style="font-size:36px;">menu</span>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero" role="banner">
+  <h1>Privacy Policy</h1>
+  <p>Committed to protecting your privacy and data security with transparency and integrity.</p>
+</section>
+
+<main class="container" tabindex="-1">
+  <section aria-labelledby="intro-title">
+    <h2 id="intro-title">Introduction</h2>
+    <p>At VerdiNest Garden Designs, we value your privacy and are committed to protecting your personal information. This privacy policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this policy carefully to understand our views and practices regarding your personal data.</p>
+    <p>By accessing or using our website, you agree to the practices described in this policy.</p>
+  </section>
+
+  <section aria-labelledby="info-we-collect-title">
+    <h2 id="info-we-collect-title">Information We Collect</h2>
+    <h3>Personal Information You Provide</h3>
+    <p>We may collect personal information such as your name, email address, mailing address, phone number, and any other information you provide when contacting us or subscribing to our services. This information enables us to provide personalized service and communications that serve your landscaping and garden design needs.</p>
+
+    <h3>Automatically Collected Information</h3>
+    <p>As you navigate our website, we automatically collect technical data including your IP address, browser type and version, time zone, and usage patterns. This data helps us understand user behavior, detect potential security threats, and improve site performance.</p>
+
+    <h3>Cookies and Tracking Technologies</h3>
+    <p>We utilize cookies and similar tracking technologies to enhance your user experience, remember your preferences, provide personalized content, and analyze site traffic. Cookies may be first-party or third-party and you can choose to disable them, though some website features may be limited as a result.</p>
+  </section>
+
+  <section aria-labelledby="how-we-use-info-title">
+    <h2 id="how-we-use-info-title">How We Use Your Information</h2>
+    <ul>
+      <li>To provide, operate, and maintain our website, including personalizing your experience with tailored content and services.</li>
+      <li>To communicate effectively with you, respond to inquiries, and deliver customer support regarding your garden design projects or services.</li>
+      <li>To send newsletters and marketing materials that reflect your interests and preferences, keeping you informed about new services, offers, and updates from VerdiNest.</li>
+      <li>To conduct data analytics, understand user interactions, and continually improve our website, service offerings, and digital experience.</li>
+      <li>To detect and prevent fraudulent activities, unauthorized access, or security breaches to protect you and our systems.</li>
+      <li>To fulfill legal obligations and enforce our terms, ensure compliance, and handle any disputes or claims.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="sharing-info-title">
+    <h2 id="sharing-info-title">Sharing Your Information</h2>
+    <p>VerdiNest does not sell, trade, or rent your personal information to third parties. We share your data only with trusted service providers assisting us in site operation, marketing, payment processing, or delivery of services, bound by confidentiality agreements.</p>
+    <p>We may disclose your information when required by law, regulatory authorities, or in response to legal processes such as subpoenas or court orders. Additionally, your information may be disclosed in connection with mergers, acquisitions, or asset sales as part of company transitions.</p>
+  </section>
+
+  <section aria-labelledby="data-security-title">
+    <h2 id="data-security-title">Data Security</h2>
+    <p>Protecting your personal information is paramount. We implement industry-standard security controls including encryption, firewalls, intrusion detection, and strict access management to safeguard your data from unauthorized access or disclosure.</p>
+    <p>While we strive to maintain highest security standards, no internet transmission or electronic storage is completely secure. We urge you to also adopt security measures on your devices and networks.</p>
+  </section>
+
+  <section aria-labelledby="user-rights-title">
+    <h2 id="user-rights-title">Your Data Protection Rights</h2>
+    <p>You have rights under applicable data protection laws, including but not limited to:</p>
+    <ul>
+      <li>The right to access your personal data and receive a copy of what we hold about you upon request.</li>
+      <li>The right to request correction or updating of inaccurate or incomplete data to ensure accuracy.</li>
+      <li>The right to request deletion of your personal data in certain situations, often known as the "right to be forgotten".</li>
+      <li>The right to restrict or object to processing your personal data for marketing or other legitimate interests.</li>
+      <li>The right to data portability to obtain and reuse your data across different services.</li>
+      <li>The right to withdraw your consent where processing is based on explicit consent.</li>
+    </ul>
+    <p>You may exercise these rights by contacting us at <a href="mailto:privacy@verdinnest.com">privacy@verdinnest.com</a>. We will respond timely and in accordance with regulations.</p>
+  </section>
+
+  <section aria-labelledby="cookies-title">
+    <h2 id="cookies-title">Cookies and Tracking Technologies</h2>
+    <p>Cookies are small text files stored on your device by websites to remember your preferences and aid in site functionality. We use a variety of cookies including:</p>
+    <ul>
+      <li><strong>Essential cookies:</strong> Necessary for basic website functions and security.</li>
+      <li><strong>Performance cookies:</strong> Collect anonymous data to improve website performance.</li>
+      <li><strong>Functional cookies:</strong> Remember choices like language or region to personalize experience.</li>
+      <li><strong>Advertising cookies:</strong> Track your browsing habits to provide targeted advertisements across platforms.</li>
+    </ul>
+    <p>You can control cookie settings via your browser or device preferences, and some browsers offer opt-out mechanisms for targeted advertising.</p>
+  </section>
+
+  <section aria-labelledby="third-party-links-title">
+    <h2 id="third-party-links-title">Third-Party Links and Services</h2>
+    <p>Our website may contain links to third-party websites and services. These are for your convenience only and do not imply our endorsement. We have no control over their privacy policies and encourage you to read their policies before providing any personal information.</p>
+  </section>
+
+  <section aria-labelledby="children-privacy-title">
+    <h2 id="children-privacy-title">Children's Privacy</h2>
+    <p>VerdiNest does not knowingly collect personal data from children under 16 years old. If we become aware that we have unintentionally gathered data from a minor, we will promptly delete it. Our services and website are designed for adult users and landscaping professionals.</p>
+  </section>
+
+  <section aria-labelledby="policy-updates-title">
+    <h2 id="policy-updates-title">Updates to This Privacy Policy</h2>
+    <p>We periodically review and update this privacy policy to align with new legal requirements, technology changes, or company policies. Changes will be posted here with updated effective dates and, where appropriate, notified via email or prominent website notices.</p>
+    <p>Continued use of our services after changes signifies acceptance of updated terms.</p>
+  </section>
+
+  <section aria-labelledby="how-to-contact-title">
+    <h2 id="how-to-contact-title">How to Contact Us</h2>
+    <p>If you have any questions, complaints, or requests regarding this privacy policy or our handling of your data, please contact us:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:privacy@verdinnest.com">privacy@verdinnest.com</a></li>
+      <li><strong>Phone:</strong> +1 (212) 555-1234</li>
+      <li><strong>Address:</strong> 242 Greene St, New York, NY 10003, USA</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="data-retention-title">
+    <h2 id="data-retention-title">Data Retention</h2>
+    <p>We retain personal information only as long as necessary to provide services, comply with legal obligations, resolve disputes, and enforce agreements. When data is no longer needed, it is securely deleted or anonymized to protect your privacy.</p>
+  </section>
+
+  <section aria-labelledby="international-transfers-title">
+    <h2 id="international-transfers-title">International Data Transfers</h2>
+    <p>Your data may be transferred to and processed in countries outside your country of residence. We ensure adequate protection by adopting legal safeguards such as standard contractual clauses and requiring third parties to adhere to strict privacy standards.</p>
+  </section>
+
+  <section aria-labelledby="your-responsibility-title">
+    <h2 id="your-responsibility-title">Your Responsibility</h2>
+    <p>While we protect your information, you are responsible for maintaining the confidentiality of your account credentials. Notify us promptly if you suspect unauthorized activity or security breaches in connection with your information.</p>
+  </section>
+
+  <section aria-labelledby="legal-bases-title">
+    <h2 id="legal-bases-title">Legal Bases for Processing</h2>
+    <p>Our processing of your personal data complies with applicable laws and is based on one or more lawful reasons, including:</p>
+    <ul>
+      <li>Your consent where applicable;</li>
+      <li>Performance of a contract between you and VerdiNest;</li>
+      <li>Compliance with a legal obligation;</li>
+      <li>Protection of your vital interests;</li>
+      <li>Legitimate interests pursued by us or a third party, balanced against your rights.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="rights-exercise-title">
+    <h2 id="rights-exercise-title">Exercising Your Rights</h2>
+    <p>Should you wish to exercise any privacy rights, please contact our Privacy Officer at <a href="mailto:privacy@verdinnest.com">privacy@verdinnest.com</a>. We commit to respond comprehensively and within regulatory timeframes.</p>
+  </section>
+
+  <section aria-labelledby="security-breaches-title">
+    <h2 id="security-breaches-title">Security Breaches</h2>
+    <p>In the event of a data breach affecting your personal information, we will follow applicable laws regarding notification to you and authorities, and take corrective actions to mitigate harm and prevent recurrence.</p>
+  </section>
+
+  <section aria-labelledby="cookies-detail-title">
+    <h2 id="cookies-detail-title">Detailed Explanation About Cookies</h2>
+    <p>Cookies allow us to understand user interactions and provide tailored experiences. They can be categorized as session cookies that expire quickly or persistent cookies that remain longer, enhancing functionality.</p>
+    <p>Third-party cookies, often associated with advertising platforms, enable us to offer personalized promotions. We respect your cookie preferences, and you can always clear or disable cookies through your browser settings.</p>
+  </section>
+
+  <section aria-labelledby="data-collection-methods-title">
+    <h2 id="data-collection-methods-title">Data Collection Methods</h2>
+    <p>We collect data directly through website forms, subscriptions, requests, and indirectly via server logs and tracking tools. We ensure that data collection is proportional and transparent.</p>
+  </section>
+
+  <section aria-labelledby="data-processing-title">
+    <h2 id="data-processing-title">Data Processing</h2>
+    <p>Data is processed using secure systems, with access limited to authorised staff following training on data confidentiality. Our privacy policies govern the entire processing lifecycle.</p>
+  </section>
+
+  <section aria-labelledby="third-party-service-providers-title">
+    <h2 id="third-party-service-providers-title">Third-Party Service Providers</h2>
+    <p>Services such as website hosting, maintenance, analytics, email delivery, and payment processing are provided by trusted third parties compliant with privacy regulations. We continuously review and monitor these partnerships for security.</p>
+  </section>
+
+  <section aria-labelledby="international-data-transfer-title">
+    <h2 id="international-data-transfer-title">International Data Transfer</h2>
+    <p>Your personal data might be transferred internationally to countries with different data protection laws. In all cases, we ensure compliance with protections such as binding corporate rules or adequacy decisions to safeguard your information.</p>
+  </section>
+
+  <section aria-labelledby="user-generated-content-title">
+    <h2 id="user-generated-content-title">User-Generated Content</h2>
+    <p>If you share feedback, reviews, or participate in forums or comments on our website, such user-generated content is stored and publicly displayed or used as described in related policies. Avoid including sensitive information within such content.</p>
+  </section>
+
+  <section aria-labelledby="links-to-other-sites-title">
+    <h2 id="links-to-other-sites-title">Links to Other Sites</h2>
+    <p>Our website may include links to external sites. These sites operate independently of VerdiNest and have separate privacy policies. We encourage you to review the privacy declarations of any external sites you visit.</p>
+  </section>
+
+  <section aria-labelledby="policy-changes-title">
+    <h2 id="policy-changes-title">Changes to This Privacy Policy</h2>
+    <p>Any changes to this policy will be posted on this page along with updated revision dates. Substantial changes will be communicated more prominently. We recommend periodic review of this document to stay informed about our privacy practices.</p>
+  </section>
+
+  <section aria-labelledby="data-controller-title">
+    <h2 id="data-controller-title">Data Controller</h2>
+    <p>VerdiNest Garden Designs is the designated data controller responsible for managing and protecting your information as described in this policy.</p>
+  </section>
+
+  <section aria-labelledby="complaints-title">
+    <h2 id="complaints-title">Complaints</h2>
+    <p>If you feel that we have violated your privacy or mishandled your personal information, you have the right to file a complaint with the relevant supervisory authority in your jurisdiction.</p>
+    <p>We value your feedback and encourage you to contact us directly for prompt resolution.</p>
+  </section>
+
+  <section aria-labelledby="effective-date-title">
+    <h2 id="effective-date-title">Effective Date</h2>
+    <p>This privacy policy is effective as of June 2024 and remains in effect until replaced by a revised version.</p>
+  </section>
+
+  <section aria-labelledby="contact-info-title">
+    <h2 id="contact-info-title">Contact Information</h2>
+    <p>For any privacy-related concerns or questions, please reach out to us:</p>
+    <ul>
+      <li>Email: <a href="mailto:privacy@verdinnest.com">privacy@verdinnest.com</a></li>
+      <li>Phone: +1 (212) 555-1234</li>
+      <li>Address: 242 Greene St, New York, NY 10003, USA</li>
+    </ul>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <address>
+      VerdiNest Garden Designs<br />
+      242 Greene St, New York, NY 10003, USA<br />
+      <a href="tel:+12125551234" style="color:#d9f99d;">+1 (212) 555-1234</a> | 
+      <a href="mailto:info@verdinnest.com" style="color:#d9f99d;">info@verdinnest.com</a>
+    </address>
+    <p style="margin-top: 20px; font-size: 0.9rem; color:#b9f6ca;">&copy; 2024 VerdiNest Garden Designs. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile Menu Toggle
+  const menuButton = document.querySelector('.mobile-menu-button');
+  const nav = document.getElementById('primary-navigation');
+
+  menuButton.addEventListener('click', () => {
+    const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+    menuButton.setAttribute('aria-expanded', !expanded);
+    nav.classList.toggle('show');
+  });
+
+  nav.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('show')) {
+      nav.classList.remove('show');
+      menuButton.setAttribute('aria-expanded', false);
+      menuButton.focus();
+    }
+  });
+</script>
+</body>
+</html>
+
