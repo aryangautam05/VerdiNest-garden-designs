@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Terms and Conditions - VerdiNest Garden Designs</title>
+<!-- Google Material Icons CDN -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+<style>
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #f0f7f1;
+    color: #374151;
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    text-decoration: none;
+    color: #276749; /* Forest green */
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #2c7a7b; /* Teal */
+    outline: none;
+  }
+  h1,h2,h3,h4 {
+    font-weight: 700;
+    color: #1a202c;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+  p {
+    margin-bottom: 1.2rem;
+    color: #4a5568;
+  }
+  ul {
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+    color: #4a5568;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  /* Container */
+  .container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  /* Header */
+  header {
+    background: #2f855a; /* dark green */
+    color: #e6fffa;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    color: #d9f99d; /* soft lime */
+    cursor: default;
+    user-select: none;
+  }
+  nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  nav a {
+    color: #c6f6d5;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(214, 255, 211, 0.3);
+    color: #22543d; /* darker green */
+  }
+  .mobile-menu-button {
+    background: none;
+    border: none;
+    color: #d9f99d;
+    cursor: pointer;
+    display: none;
+    font-size: 32px;
+  }
+  /* Responsive navigation */
+  @media (max-width: 767px) {
+    nav {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      background: #276749;
+      padding: 16px 24px;
+      position: fixed;
+      top: 64px;
+      right: 0;
+      width: 240px;
+      height: calc(100% - 64px);
+      box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+      border-radius: 0 0 0 12px;
+      z-index: 1200;
+    }
+    nav.show {
+      display: flex;
+    }
+    .mobile-menu-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border-radius: 8px;
+      user-select: none;
+    }
+  }
+  @media (min-width: 768px) {
+    nav {
+      display: flex !important;
+    }
+  }
+  /* Page Title Section */
+  .page-hero {
+    background: linear-gradient(145deg, #1e3a23 5%, #53a548 90%);
+    color: #f0fff7;
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .page-hero h1 {
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Content */
+  main {
+    padding-bottom: 64px;
+  }
+  /* Footer */
+  footer {
+    background: #22543d;
+    color: #d9f99d;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  footer address {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #c6f6d5;
+  }
+  /* Sections */
+  section {
+    margin-bottom: 56px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="logo" aria-label="VerdiNest Garden Designs Logo">VerdiNest</div>
+    <nav aria-label="Primary Navigation" id="primary-navigation"><a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0"aria-current="page">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+    </nav>
+    <button class="mobile-menu-button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="material-icons" style="font-size:36px;">menu</span>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero" role="banner">
+  <h1>Terms and Conditions</h1>
+  <p>Please read these terms carefully before using our services and website.</p>
+</section>
+
+<main class="container" tabindex="-1">
+
+<section aria-labelledby="intro-title">
+  <h2 id="intro-title">Introduction</h2>
+  <p>Welcome to VerdiNest Garden Designs. These Terms and Conditions govern your use of our website and services. By accessing or using our website, you agree to comply with these terms.</p>
+  <p>We encourage you to read this agreement thoroughly to understand your rights and obligations.</p>
+</section>
+
+<section aria-labelledby="use-of-services-title">
+  <h2 id="use-of-services-title">Use of Our Services</h2>
+  <p>You agree to use our services only for lawful purposes and in accordance with these Terms. You must not use our website or services in any way that may damage, disable, or impair it, or interfere with others’ use and enjoyment.</p>
+  <p>You acknowledge responsibility for any content you submit through our website or communication channels, ensuring it does not violate rights of others or applicable laws.</p>
+</section>
+
+<section aria-labelledby="user-accounts-title">
+  <h2 id="user-accounts-title">User Accounts and Security</h2>
+  <p>Some services may require creating a user account. You are responsible for maintaining the confidentiality of login credentials. You agree to notify us immediately of any unauthorized access.</p>
+  <p>We are not liable for loss or damage arising from your failure to comply with these security obligations.</p>
+</section>
+
+<section aria-labelledby="service-availability-title">
+  <h2 id="service-availability-title">Service Availability and Changes</h2>
+  <p>We strive to ensure continuous availability of our website and services. However, we reserve the right to suspend or discontinue any part of the service without prior notice for maintenance or cause.</p>
+  <p>We may update or modify services, features, or content from time to time. Continued use of services constitutes acceptance of any changes.</p>
+</section>
+
+<section aria-labelledby="payment-terms-title">
+  <h2 id="payment-terms-title">Payment and Pricing</h2>
+  <p>All service prices are as displayed on our website at the time of order or agreement. Prices are subject to change with notice.</p>
+  <p>Payments shall be made in accordance with the terms agreed at purchase or contract. Late payments may incur fees as permitted by law.</p>
+</section>
+
+<section aria-labelledby="cancellations-and-refunds-title">
+  <h2 id="cancellations-and-refunds-title">Cancellations and Refunds</h2>
+  <p>Cancellations of services must be made in writing. Refund eligibility is governed by the specific service agreement or applicable consumer laws.</p>
+  <p>We reserve the right to refuse refunds or partial refunds under conditions specified in individual contracts.</p>
+</section>
+
+<section aria-labelledby="intellectual-property-title">
+  <h2 id="intellectual-property-title">Intellectual Property Rights</h2>
+  <p>All content, designs, graphics, and trademarks on our website are owned or licensed by VerdiNest Garden Designs. You may not use, reproduce, or distribute them without our express written permission.</p>
+  <p>You retain ownership of any of your content you submit but grant us a non-exclusive license to use it for provision and promotion of our services.</p>
+</section>
+
+<section aria-labelledby="limitations-of-liability-title">
+  <h2 id="limitations-of-liability-title">Limitations of Liability</h2>
+  <p>VerdiNest shall not be liable for any indirect, incidental, consequential, or punitive damages arising out of the use or inability to use our website or services.</p>
+  <p>Our liability for direct damages is limited to the amount paid by you for the particular service.</p>
+</section>
+
+<section aria-labelledby="indemnification-title">
+  <h2 id="indemnification-title">Indemnification</h2>
+  <p>You agree to indemnify and hold harmless VerdiNest, its officers, agents, and employees from any claims, damages, liabilities, and expenses arising out of your violation of these Terms or improper use of our services.</p>
+</section>
+
+<section aria-labelledby="governing-law-title">
+  <h2 id="governing-law-title">Governing Law and Jurisdiction</h2>
+  <p>These Terms are governed by the laws of the State of New York, USA. Any disputes arising under or related to these Terms shall be subject to the exclusive jurisdiction of courts located in New York County.</p>
+</section>
+
+<section aria-labelledby="third-party-sites-title">
+  <h2 id="third-party-sites-title">Third-Party Websites and Services</h2>
+  <p>Our website may contain links to external third-party websites. These are provided for your convenience and VerdiNest has no control over their content or availability.</p>
+  <p>We disclaim responsibility for any losses or damages arising from your use of linked websites or services.</p>
+</section>
+
+<section aria-labelledby="privacy-policy-title">
+  <h2 id="privacy-policy-title">Privacy Policy</h2>
+  <p>Your use of our services is also subject to our Privacy Policy, which explains how we collect and protect your personal information.</p>
+  <p>Please review our <a href="privacy.html">Privacy Policy</a> carefully.</p>
+</section>
+
+<section aria-labelledby="force-majeure-title">
+  <h2 id="force-majeure-title">Force Majeure</h2>
+  <p>VerdiNest is not liable for failure or delay in fulfilling obligations caused by events beyond our reasonable control, including natural disasters, acts of government, or labor disputes.</p>
+</section>
+
+<section aria-labelledby="termination-title">
+  <h2 id="termination-title">Termination</h2>
+  <p>We reserve the right to terminate or suspend your access to the website or services immediately for any breach of these Terms or illegal activity.</p>
+  <p>Upon termination, your rights to use the services will cease immediately.</p>
+</section>
+
+<section aria-labelledby="disclaimer-title">
+  <h2 id="disclaimer-title">Disclaimer</h2>
+  <p>All services and information on our website are provided "as is" without warranties of any kind. VerdiNest disclaims all warranties, express or implied, including fitness for a particular purpose.</p>
+  <p>We do not guarantee the accuracy or completeness of any content.</p>
+</section>
+
+<section aria-labelledby="user-responsibility-title">
+  <h2 id="user-responsibility-title">User Responsibility</h2>
+  <p>Users agree to use our website and services responsibly, and not engage in any conduct that may harm or interfere with others' use.</p>
+</section>
+
+<section aria-labelledby="dispute-resolution-title">
+  <h2 id="dispute-resolution-title">Dispute Resolution</h2>
+  <p>In the event of disputes, parties agree to engage in good faith negotiations to resolve issues amicably before pursuing legal remedies.</p>
+</section>
+
+<section aria-labelledby="modifications-title">
+  <h2 id="modifications-title">Modifications to Terms</h2>
+  <p>We reserve the right to update or change these Terms at any time, with changes effective immediately upon posting. Continued use of the site constitutes acceptance of the revised Terms.</p>
+</section>
+
+<section aria-labelledby="entire-agreement-title">
+  <h2 id="entire-agreement-title">Entire Agreement</h2>
+  <p>These Terms and any policies incorporated by reference constitute the entire agreement between you and VerdiNest regarding use of our services.</p>
+</section>
+
+<section aria-labelledby="contact-us-title">
+  <h2 id="contact-us-title">Contact Us</h2>
+  <p>If you have any questions or concerns about these Terms and Conditions, please contact:</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:support@verdinnest.com">support@verdinnest.com</a></li>
+    <li><strong>Phone:</strong> +1 (212) 555-1234</li>
+    <li><strong>Address:</strong> 242 Greene St, New York, NY 10003, USA</li>
+  </ul>
+</section>
+
+<section aria-labelledby="additional-clauses-title">
+  <h2 id="additional-clauses-title">Additional Clauses</h2>
+
+  <h3>Intellectual Property</h3>
+  <p>All intellectual property rights relating to our website content, graphics, and services remain the property of VerdiNest Garden Designs or its licensors. Unauthorized copying or use is prohibited.</p>
+
+  <h3>Limitation of Liability</h3>
+  <p>To the fullest extent permitted by law, VerdiNest will not be liable for any damages arising from the use or inability to use our services, including but not limited to indirect, incidental, or consequential damages.</p>
+
+  <h3>Severability</h3>
+  <p>If any provision of these Terms is found invalid or unenforceable, the remaining provisions will continue in full force and effect.</p>
+
+  <h3>Waiver</h3>
+  <p>Failure to enforce any provision of these Terms does not constitute a waiver of such right or provision.</p>
+
+  <h3>Assignment</h3>
+  <p>We may assign or transfer our rights and obligations under these Terms without restriction. You may not assign your rights without prior consent.</p>
+
+  <h3>Headings</h3>
+  <p>Headings used in these Terms are for convenience only and do not affect interpretation.</p>
+
+  <h3>Feedback</h3>
+  <p>Any feedback or suggestions you provide shall be non-confidential and may be used by VerdiNest without restriction.</p>
+  
+  <h3>Governing Language</h3>
+  <p>This agreement is provided in the English language, which governs its interpretation and enforcement.</p>
+
+  <h3>Accessibility</h3>
+  <p>We are committed to providing an accessible website that can be used by as many people as possible. If you encounter any barriers or difficulties using our site, please contact us so we can assist and improve accessibility.</p>
+
+  <h3>User Content</h3>
+  <p>You agree not to upload or post content that is unlawful, harmful, threatening, abusive, defamatory, obscene, or otherwise objectionable. We reserve the right to remove such content without notice.</p>
+
+  <h3>Marketing and Communications</h3>
+  <p>By using our services, you consent to receive marketing communications. You may opt out at any time through unsubscribe links or contacting us directly.</p>
+
+  <h3>Disclaimer of Warranties</h3>
+  <p>We provide our services on an "as is" basis without warranties of any kind, express or implied. We do not guarantee uninterrupted or error-free service.</p>
+
+  <h3>Force Majeure</h3>
+  <p>We are not responsible for failures or delays caused by events beyond our control, including but not limited to natural disasters, pandemics, governmental actions, or internet failures.</p>
+
+  <h3>Survival</h3>
+  <p>Provisions regarding limitations of liability, indemnification, and others survive termination of service use.</p>
+
+  <h3>Third-Party Integrations</h3>
+  <p>Our website may integrate with third-party platforms (such as payment processors or mapping services). Your use of such integrations is governed by their terms and privacy policies.</p>
+
+  <h3>Customer Responsibility</h3>
+  <p>You are responsible for providing accurate information and for complying with all applicable laws relating to your use of our services.</p>
+
+  <h3>Software Updates</h3>
+  <p>We may update our website and software components to improve functionality and security. Continued use implies acceptance of these updates.</p>
+
+  <h3>Governing Jurisdiction</h3>
+  <p>All disputes arising out of these Terms shall be governed by and construed under the laws of New York State.</p>
+
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <address>
+      VerdiNest Garden Designs<br />
+      242 Greene St, New York, NY 10003, USA<br />
+      <a href="tel:+12125551234" style="color:#d9f99d;">+1 (212) 555-1234</a> | 
+      <a href="mailto:info@verdinnest.com" style="color:#d9f99d;">info@verdinnest.com</a>
+    </address>
+    <p style="margin-top: 20px; font-size: 0.9rem; color:#b9f6ca;">&copy; 2024 VerdiNest Garden Designs. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile Menu Toggle
+  const menuButton = document.querySelector('.mobile-menu-button');
+  const nav = document.getElementById('primary-navigation');
+
+  menuButton.addEventListener('click', () => {
+    const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+    menuButton.setAttribute('aria-expanded', !expanded);
+    nav.classList.toggle('show');
+  });
+
+  nav.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('show')) {
+      nav.classList.remove('show');
+      menuButton.setAttribute('aria-expanded', false);
+      menuButton.focus();
+    }
+  });
+</script>
+</body>
+</html>
+
